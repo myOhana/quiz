@@ -1,140 +1,143 @@
 #home {
-    background-image: url('../../assets/img/background.jpg');
+    background-image: url("../../assets/img/background.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: space-around;
     height: 100vh;
     width: 100vw;
-
+  
     section {
-        backdrop-filter: saturate(180%)blur(20px);
-        background-color: rgba(0, 0, 0, 0.7);
-        margin: auto;
-        padding-left: $md;
-        padding-right: $md;
-        height: 80%;
-        width: 35%;
-        border-radius: 5px;
-
+      backdrop-filter: saturate(180%) blur(20px);
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: auto;
+      padding-left: $md;
+      padding-right: $md;
+      height: 80%;
+      width: 35%;
+      border-radius: 5px;
     }
-
+  
     .cube {
-        margin-top: 25%;
-        color: $lightblue;
-        height: 75px;
-        width: 75px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25%;
+      color: $lightblue;
+      height: 75px;
+      width: 75px;
     }
-
+  
     h1 {
-        font-size: $lg;
-        font-weight: 350;
-        text-align: center;
-        color: $off-white;
+      font-size: $lg;
+      font-weight: 350;
+      text-align: center;
+      color: $off-white;
     }
-
+  
     .play-button-container {
-        width: 100%;
+      width: 100%;
     }
-
+  
     a.play-button {
-        // background-color: $green;
-        // border-radius: $button-radius;
-        // color: #fff;
-        // display: block;
-        // cursor: pointer;
-        // padding: $normal;
-        // text-align: center;
-        // transition: 0.3s linear all;
-        display: block;
-        padding: 0.5em 3em;
-        border: 0.16em solid #FFFFFF;
-        margin: 5rem 0.3em 0.3em 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        color: #FFFFFF;
-        text-align: center;
-        transition: all 0.15s;
+      // background-color: $green;
+      // border-radius: $button-radius;
+      // color: #fff;
+      // display: block;
+      // cursor: pointer;
+      // padding: $normal;
+      // text-align: center;
+      // transition: 0.3s linear all;
+      display: block;
+      padding: 0.5em 3em;
+      border: 0.16em solid #ffffff;
+      margin: 5rem 0.3em 0.3em 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      color: #ffffff;
+      text-align: center;
+      transition: all 0.15s;
     }
-
+  
     a.play-button:hover {
-        background-color: darken($green, 10%);
-        box-shadow: $shadow;
-        transition: all 0.15s;
+      background-color: darken($green, 10%);
+      box-shadow: $shadow;
+      transition: all 0.15s;
     }
-
+  
     .auth-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        margin-top: $lg;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: $lg;
     }
-
+  
     #login-button {
-        // background-color: $red;
-        display: block;
-        padding: 0.7em 1.4em;
-        margin: 0 0.3em 0.3em 0;
-        border-radius: 0.15em;
-        box-sizing: border-box;
-        text-decoration: none;
-        font-family: 'Roboto', sans-serif;
-        text-transform: uppercase;
-        font-weight: 400;
-        color: #ffffff;
-        background-color: #425da5;
-        box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-        text-align: center;
-        position: relative;
+      // background-color: $red;
+      display: block;
+      padding: 0.7em 1.4em;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.15em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: #ffffff;
+      background-color: #425da5;
+      box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+      text-align: center;
+      position: relative;
     }
-
+  
     #login-button:hover {
-        background-color: darken($red, 10%);
-        box-shadow: $shadow;
-        color: #FFFFFF;
+      background-color: darken($red, 10%);
+      box-shadow: $shadow;
+      color: #ffffff;
     }
-
+  
     #signup-button {
-        // background-color: $blue;
-        display: block;
-        padding: 0.7em 1.4em;
-        margin: 0 0.3em 0.3em 0;
-        border-radius: 0.15em;
-        box-sizing: border-box;
-        text-decoration: none;
-        font-family: 'Roboto', sans-serif;
-        text-transform: uppercase;
-        font-weight: 400;
-        color: #FFFFFF;
-        background-color: #0538c2;
-        box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-        text-align: center;
-        position: relative;
+      // background-color: $blue;
+      display: block;
+      padding: 0.7em 1.4em;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.15em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: #ffffff;
+      background-color: #0538c2;
+      box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+      text-align: center;
+      position: relative;
     }
-
+  
     #signup-button:hover {
-        background-color: darken($orange, 10%);
-        box-shadow: $shadow;
+      background-color: darken($orange, 10%);
+      box-shadow: $shadow;
     }
-
+  
     .auth-container .auth-buttons {
-        color: #fff;
-        cursor: pointer;
-        border-radius: $button-radius;
-        padding: $normal 0;
-        text-align: center;
-        transition: 0.3s linear all;
-        width: 45%;
+      color: #fff;
+      cursor: pointer;
+      border-radius: $button-radius;
+      padding: $normal 0;
+      text-align: center;
+      transition: 0.3s linear all;
+      width: 45%;
     }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     #home section {
-        padding: 0 $normal;
-        width: 100%;
-        height: 100%;
+      padding: 0 $normal;
+      width: 100%;
+      height: 100%;
     }
-}
+  }
+  
