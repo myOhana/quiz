@@ -20,6 +20,7 @@ function QuizGk() {
             }));
             setQuestions(questions);
           });
+         
       }, []);
 
     return (

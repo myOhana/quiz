@@ -1,44 +1,27 @@
 import React from "react";
+import Timer from './Timer';
 
 const Questions = ({
   showAnswers,
   handleNextQuestion,
+  currentIndex,
   handleQuitButtonClick,
+  questions,
   handleAnswer,
   data: { question, correct_answer, answers },
 }) => {
   return (
     <div className="questions">
       <h2>Quiz Mode</h2>
-      <div className="lifeline-container">
-        <p>
-          <span
-            // onClick={handleFiftyFifty}
-            className="mdi mdi-set-center mdi-24px lifeline-icon"
-          >
-            <span className="lifeline">fiftyFifty</span>
-          </span>
-        </p>
-        <p>
-          <span
-            // onClick={handleHints}
-            className="mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon"
-          >
-            {" "}
-            <span className="lifeline">hints</span>
-          </span>{" "}
-        </p>
-      </div>
       <div>
-        <p>
-          <span className="left">1 of 10</span>
-          <span className="right">
-            2:30
-            <span className="mdi mdi-clock-outline mdi-24px"></span>
+        <div className='lifeline-container center p-5'>
+          <span className="left lifeline lifeline-icon mt-3">{currentIndex + 1} of {questions.length}</span>
+          <span className="right lifeline lifeline-icon flex">
+            <Timer/> <span className="mdi mdi-clock-outline mdi-24px"></span>
           </span>
-        </p>
+        </div>
       </div>
-      <div className="flex flex-col mt-12">
+      <div className="flex flex-col mt-6 center">
         <div className="bg-white text-purple-800 p-3 rounded shadow-md">
           <h5
             className="text-2xl"

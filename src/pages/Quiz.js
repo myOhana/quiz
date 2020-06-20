@@ -16,6 +16,7 @@ function Quiz({ questions}) {
   const [showAnswers, setShowAnswers] = useState(false);
   let history = useHistory();
 
+//   On answering
   const handleAnswer = (answer) => {
     // prevents double answers
     if (!showAnswers) {
@@ -28,6 +29,7 @@ function Quiz({ questions}) {
     setShowAnswers(true);
   };
 
+//   Next Question
   const handleNextQuestion = () => {
     //   increments index of question
     setShowAnswers(false);
@@ -36,6 +38,7 @@ function Quiz({ questions}) {
     setCurrentIndex(newIndex);
   };
 
+//   Quit game
   const handleQuitButtonClick = () => {
     if (window.confirm("Are you sure you want to quit?")) {
       history.push('/');
@@ -52,13 +55,14 @@ function Quiz({ questions}) {
           Game Ended! Your score is {score}.{" "}
           </h1>
       ) : (
-        
         <Questions
           data={questions[currentIndex]}
           handleAnswer={handleAnswer}
           showAnswers={showAnswers}
           handleNextQuestion={handleNextQuestion}
           handleQuitButtonClick={handleQuitButtonClick}
+          currentIndex={currentIndex}
+          questions={questions}
         />
       )}
     </Fragment>
