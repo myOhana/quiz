@@ -47,14 +47,14 @@ const Questions = ({
         </div>
         <div className="grid grid-cols-2 gap-6 mt-6">
           {answers.map((answer) => {
-            const textColor = showAnswers
-              ? answer === correct_answer
-                ? "text-green-500 bg-white"
-                : "text-red-500 bg-white"
-              : "text-purple-700 bg-white";
+            // const textColor = showAnswers
+            //   ? answer === correct_answer
+            //     ? "text-green-500 bg-white"
+            //     : "text-red-500 bg-white"
+            //   : "text-purple-700 bg-white";
             return (
               <button
-                className={`${textColor} bg-white p-4 font-semibold rounded shadow`}
+                className='text-purple-600 bg-white p-4 font-semibold rounded shadow'
                 onClick={() => handleAnswer(answer)}
                 dangerouslySetInnerHTML={{ __html: answer }}
               />
