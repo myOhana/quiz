@@ -7,7 +7,7 @@ class QuizSummary extends Component {
     super(props);
     this.state = {
       score: 0,
-      numberOfQuestions: 0,
+      numberOfQuestions: 10,
       numberOfAnsweredQuestions: 0,
       correctAnswers: 0,
       wrongAnswers: 0,
@@ -18,8 +18,8 @@ class QuizSummary extends Component {
     const { state } = this.props.location;
     if (state) {
       this.setState({
-        score: (state.score / state.numberOfQuestions) * 100,
-        numberOfQuestions: state.numberOfQuestions,
+        score: (state.score / 10) * 100,
+        numberOfQuestions: 10,
         numberOfAnsweredQuestions: state.numberOfAnsweredQuestions,
         correctAnswers: state.correctAnswers,
         wrongAnswers: state.wrongAnswers,
@@ -55,7 +55,7 @@ class QuizSummary extends Component {
             <h4>{remark}</h4>
             <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
             <span className="stat left">Total number of questions: </span>
-            <span className="right">{this.state.numberOfQuestions}</span>
+            <span className="right">10</span>
             <br />
             <span className="stat left">Number of attempted questions: </span>
             <span className="right">

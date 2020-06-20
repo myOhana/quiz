@@ -8,6 +8,7 @@ const Questions = ({
   currentIndex,
   handleQuitButtonClick,
   questions,
+  wrongAnswers,
   endGame,
   handleAnswer,
   data: { question, correct_answer, answers },
@@ -21,7 +22,9 @@ const Questions = ({
             {currentIndex + 1} of {questions.length}
           </span>
           <span className="right lifeline lifeline-icon flex">
-            <Timer endGame={endGame} score={score} />{" "}
+            <>
+              <Timer score={score} currentIndex={currentIndex} wrongAnswers={wrongAnswers}/>{" "}
+            </>
             <span className="mdi mdi-clock-outline mdi-24px"></span>
           </span>
         </div>

@@ -1,10 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
-const Timer = (props, { endGame }) => {
-  const { initialMinute = 2, initialSeconds = 59 } = props;
-  const [minutes, setMinutes] = useState(initialMinute);
-  const [seconds, setSeconds] = useState(initialSeconds);
+const Timer = ({ score, currentIndex, wrongAnswers }) => {
+  // const { initialMinute = 0, initialSeconds = 5 } = props;
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(30);
+  const history = useHistory();
 
   useEffect(() => {
     let myInterval = setInterval(() => {
@@ -25,15 +27,27 @@ const Timer = (props, { endGame }) => {
     };
   });
 
+  const endGame = () => {
+    alert("Quiz has ended. Time Over");
+    const playerStats = {
+      score: score,
+      numberOfQuestions: currentIndex,
+      numberOfAnsweredQuestions: score + wrongAnswers,
+      correctAnswers: score,
+      wrongAnswers: wrongAnswers,
+    };
+    // return <QuizSummary playerStats={} />;
+    setTimeout(() => {
+      console.log("this is set timeout of time over");
+      history.push("/summary", playerStats);
+    }, 3000);
+    console.log("Clicked on time over");
+  };
+
   return (
     <div>
       {minutes === 0 && seconds === 0 ? (
-        <button
-          className="ml-auto bg-purple-700 text-white p-4 font-semibold rounded shadow mt-6"
-          onClick={() => endGame()}
-        >
-          Time Up
-        </button>
+        endGame()
       ) : (
         <p className="mt-2">
           {" "}

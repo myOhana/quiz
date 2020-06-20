@@ -50,11 +50,11 @@ function Quiz({ questions }) {
   };
 
   //   End of Game due to time over or all questions answered
-  const endGame = () => {
+ const endGame = () => {
     alert("Quiz has ended");
     const playerStats = {
       score: score,
-      numberOfQuestions: currentIndex,
+      numberOfQuestions: questions.length,
       numberOfAnsweredQuestions: score + wrongAnswers,
       correctAnswers: score,
       wrongAnswers: wrongAnswers,
@@ -63,6 +63,7 @@ function Quiz({ questions }) {
     setTimeout(() => {
       history.push("/summary", playerStats);
     }, 1000);
+    console.log('finished Game');
   };
 
   return questions.length > 0 ? (
@@ -83,6 +84,7 @@ function Quiz({ questions }) {
           questions={questions}
           endGame={endGame}
           score={score}
+          wrongAnswers={wrongAnswers}
         />
       )}
     </Fragment>
