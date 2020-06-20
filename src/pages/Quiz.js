@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import Questions from "../components/Questions";
-import {Helmet} from 'react-helmet';
+import { Helmet } from "react-helmet";
 import { useHistory } from "react-router-dom";
 // import QuizSummary from "../components/quiz/QuizSummary";
 
@@ -9,14 +9,15 @@ import { useHistory } from "react-router-dom";
 // const API_URL_MATH =
 //   "https://opentdb.com/api.php?amount=19&category=19&type=multiple";
 
-function Quiz({ questions}) {
-//   const [questions, setQuestions] = useState([]);
+function Quiz({ questions }) {
+  //   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [wrongAnswers, setWrongAnswers] = useState(0);
   const [showAnswers, setShowAnswers] = useState(false);
   let history = useHistory();
 
-//   On answering
+  //   On answering
   const handleAnswer = (answer) => {
     // prevents double answers
     if (!showAnswers) {
@@ -24,12 +25,15 @@ function Quiz({ questions}) {
       if (answer === questions[currentIndex].correct_answer) {
         const newScore = score + 1;
         setScore(newScore);
+      }else{
+          const moreWrong = wrongAnswers + 1;
+          setWrongAnswers(moreWrong);
       }
     }
     setShowAnswers(true);
   };
 
-//   Next Question
+  //   Next Question
   const handleNextQuestion = () => {
     //   increments index of question
     setShowAnswers(false);
@@ -38,22 +42,36 @@ function Quiz({ questions}) {
     setCurrentIndex(newIndex);
   };
 
-//   Quit game
+  //   Quit game
   const handleQuitButtonClick = () => {
     if (window.confirm("Are you sure you want to quit?")) {
-      history.push('/');
+      history.push("/");
     }
-  }
+  };
+
+  //   End of Game due to time over or all questions answered
+  const endGame = () => {
+    alert("Quiz has ended");
+    const playerStats = {
+      score: score,
+      numberOfQuestions: currentIndex,
+      numberOfAnsweredQuestions: score + wrongAnswers,
+      correctAnswers: score,
+      wrongAnswers: wrongAnswers,
+    };
+    // return <QuizSummary playerStats={} />;
+    setTimeout(() => {
+      history.push("/summary", playerStats);
+    }, 1000);
+  };
 
   return questions.length > 0 ? (
     <Fragment>
-        <Helmet>
-          <title>Quiz Page</title>
-        </Helmet>
+      <Helmet>
+        <title>Quiz Page</title>
+      </Helmet>
       {currentIndex >= questions.length ? (
-        <h1 className="text-3xl text-purple font-bold">
-          Game Ended! Your score is {score}.{" "}
-          </h1>
+        endGame()
       ) : (
         <Questions
           data={questions[currentIndex]}
@@ -63,6 +81,8 @@ function Quiz({ questions}) {
           handleQuitButtonClick={handleQuitButtonClick}
           currentIndex={currentIndex}
           questions={questions}
+          endGame={endGame}
+          score={score}
         />
       )}
     </Fragment>

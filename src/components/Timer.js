@@ -1,10 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const Timer = (props) => {
+const Timer = (props, { endGame }) => {
   const { initialMinute = 2, initialSeconds = 59 } = props;
   const [minutes, setMinutes] = useState(initialMinute);
   const [seconds, setSeconds] = useState(initialSeconds);
+
   useEffect(() => {
     let myInterval = setInterval(() => {
       if (seconds > 0) {
@@ -26,8 +27,15 @@ const Timer = (props) => {
 
   return (
     <div>
-      {minutes === 0 && seconds === 0 ? null : (
-        <p className='mt-2'>
+      {minutes === 0 && seconds === 0 ? (
+        <button
+          className="ml-auto bg-purple-700 text-white p-4 font-semibold rounded shadow mt-6"
+          onClick={() => endGame()}
+        >
+          Time Up
+        </button>
+      ) : (
+        <p className="mt-2">
           {" "}
           {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         </p>

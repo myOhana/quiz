@@ -1,12 +1,14 @@
 import React from "react";
-import Timer from './Timer';
+import Timer from "./Timer";
 
 const Questions = ({
+  score,
   showAnswers,
   handleNextQuestion,
   currentIndex,
   handleQuitButtonClick,
   questions,
+  endGame,
   handleAnswer,
   data: { question, correct_answer, answers },
 }) => {
@@ -14,10 +16,13 @@ const Questions = ({
     <div className="questions">
       <h2>Quiz Mode</h2>
       <div>
-        <div className='lifeline-container center p-5'>
-          <span className="left lifeline lifeline-icon mt-3">{currentIndex + 1} of {questions.length}</span>
+        <div className="lifeline-container center p-5">
+          <span className="left lifeline lifeline-icon mt-3">
+            {currentIndex + 1} of {questions.length}
+          </span>
           <span className="right lifeline lifeline-icon flex">
-            <Timer/> <span className="mdi mdi-clock-outline mdi-24px"></span>
+            <Timer endGame={endGame} score={score} />{" "}
+            <span className="mdi mdi-clock-outline mdi-24px"></span>
           </span>
         </div>
       </div>
@@ -37,7 +42,7 @@ const Questions = ({
             //   : "text-purple-700 bg-white";
             return (
               <button
-                className='text-purple-600 bg-white p-4 font-semibold rounded shadow'
+                className="text-purple-600 bg-white p-4 font-semibold rounded shadow"
                 onClick={() => handleAnswer(answer)}
                 dangerouslySetInnerHTML={{ __html: answer }}
               />
