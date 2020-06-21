@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 
 const Timer = ({ score, currentIndex, wrongAnswers }) => {
   // const { initialMinute = 0, initialSeconds = 5 } = props;
-  const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(59);
+  // const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(180);
   const history = useHistory();
 
   useEffect(() => {
@@ -14,12 +14,12 @@ const Timer = ({ score, currentIndex, wrongAnswers }) => {
         setSeconds(seconds - 1);
       }
       if (seconds === 0) {
-        if (minutes === 0) {
+        // if (minutes === 0) {
           clearInterval(myInterval);
-        } else {
-          setMinutes(minutes - 1);
-          setSeconds(59);
-        }
+        // } else {
+        //   setMinutes(minutes - 1);
+        //   setSeconds(59);
+        // }
       }
     }, 1000);
     return () => {
@@ -40,18 +40,18 @@ const Timer = ({ score, currentIndex, wrongAnswers }) => {
     setTimeout(() => {
       console.log("this is set timeout of time over");
       history.push("/summary", playerStats);
-    }, 3000);
+    }, 1000);
     console.log("Clicked on time over");
   };
 
   return (
     <div>
-      {minutes === 0 && seconds === 0 ? (
+      { seconds === 0 ? (
         endGame()
       ) : (
         <p className="mt-2">
           {" "}
-          {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+          {seconds < 10 ? `0${seconds}` : seconds}
         </p>
       )}
     </div>
