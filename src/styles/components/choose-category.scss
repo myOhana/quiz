@@ -28,6 +28,7 @@
   background-position: center;
   display: flex;
   justify-content: space-around;
+  overflow-y: scroll;
   height: 100vh;
   width: 100vw;
 
@@ -119,9 +120,3 @@
   }
 }
 
-@media (max-width: $md-breakpoint) {
-  .instructions img {
-    width: 100% !important;
-    height: 150% !important;
-  }
-}

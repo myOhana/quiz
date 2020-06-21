@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 
 const Timer = ({ score, currentIndex, wrongAnswers }) => {
   // const { initialMinute = 0, initialSeconds = 5 } = props;
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(30);
+  const [minutes, setMinutes] = useState(2);
+  const [seconds, setSeconds] = useState(59);
   const history = useHistory();
 
   useEffect(() => {

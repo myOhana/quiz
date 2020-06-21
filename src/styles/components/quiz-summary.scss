@@ -1,102 +1,122 @@
 .quiz-summary {
-    font-family: $quicksand;
+  font-family: $quicksand;
 
-    span.success-icon {
-        color: $green;
-        font-size: $xxlg;
-    }
+  span.success-icon {
+    color: $dark-purple;
+    font-size: $xlg;
+  }
 
-    h1 {
-        color: $green;
-        text-align: center;
-        font-size: $lg;
-        margin-top: -$sm;
-    }
+  h1 {
+    color: $dark-purple;
+    text-align: center;
+    font-size: $lg;
+    margin-top: -$sm;
+  }
 
-    h2 {
-        color: $blue;
-    }
+  h2 {
+    // color: $blue;
+    color: lighten($golden, 10%);
+  }
 
-    h4 {
-        color: lighten($off-black, 10%);
-    }
+  h4 {
+    // color: lighten($off-black, 10%);
+    color: $yellow;
+  }
 
-    .stats {
-        background-color: $off-white;
-        max-width: 50%;
-        padding: $sm $md $md $md;
-    }
+  .container{
+      height: fit-content;
+      padding: 10px;
+  }
 
-    .stats h4, .stats h2 {
-        text-align: center;
-    }
+  .stats {
+    background-color: $dark-purple;
+    max-width: 50%;
+    // height: 65vh;
+    // padding: $sm $md $md $md;
+  }
 
-    .stats .stat {
-        color: $off-black;
-        font-size: $normal;
-    }
+  .stats .left,
+  .stats .right {
+    color: $off-white;
+    font-size: 20px;
+    margin: 23px;
+  }
 
-    section ul {
-        margin-top: $sm;
-        text-align: center;
-    }
+  .stats h4,
+  .stats h2 {
+    text-align: center;
+  }
 
-    section ul li {
-        display: inline-block;
-    }
+  .stats .stat {
+    color: $off-white;
+    // font-size: $sm;
+  }
 
-    section ul li a {
-        padding: $sm !important;
-    }
+  section ul {
+    margin-top: $sm;
+    text-align: center;
+  }
 
-    section ul li a:hover {
-        color: $off-white;
-    }
+  section ul li {
+    display: inline-block;
+    padding: 10px;
+  }
 
-    section ul li:first-child {
-        border: 1px solid $blue;
-        margin-right: $sm;
-        transition: 0.3s linear all;
-    }
+  section ul li a {
+    color: $purple;
+    padding: $sm !important;
+  }
 
-    section ul li:first-child:hover {
-        background-color: $blue;
-    }
+  section ul li a:hover {
+    color: $off-white;
+  }
 
-    section ul li:last-child {
-        border: 1px solid $green;
-        transition: 0.3s linear all;
-    }
+  section ul li:first-child {
+    border: 1px solid $purple;
+    color: $purple;
+    margin-right: $sm;
+    transition: 0.3s linear all;
+  }
 
-    section ul li:last-child:hover {
-        background-color: $green;
-    }
+  section ul li:first-child:hover {
+    background-color: $purple;
+  }
 
-    section ul li:last-child a {
-        color: $green;
-    }
+  section ul li:last-child {
+    border: 1px solid $golden;
+    transition: 0.3s linear all;
+    color: $golden;
+  }
 
-    section ul li:last-child a:hover {
-        color: $off-white;
-    }
+  section ul li:last-child:hover {
+    background-color: $golden;
+  }
 
-    .no-stats {
-        color: $off-black;
-        margin: $xxlg auto;
-    }
+  section ul li:last-child a {
+    color: $golden;
+  }
+
+  section ul li:last-child a:hover {
+    color: $off-white;
+  }
+
+  .no-stats {
+    color: $off-black;
+    margin: $xxlg auto;
+  }
 }
 
 @media (max-width: $md-breakpoint) {
-    .quiz-summary {
-        font-size: $sm;
-        padding-left: $xs;
-        padding-right: $xs;
-    }
+  .quiz-summary {
+    font-size: $md;
+    padding-left: $xs;
+    padding-right: $xs;
+  }
 
-    div.container.stats {
-        margin: 0;
-        padding: $sm;
-        max-width: 100%;
-        width: 100%;
-    }
+  div.container.stats {
+    margin: 0;
+    padding: $sm;
+    max-width: 100%;
+    width: 100%;
+  }
 }

@@ -5,11 +5,12 @@ import { Helmet } from "react-helmet";
 
 function Categories() {
     return (
-      <div className='main'>
+      <>
       <Fragment>
       <Helmet>
       <title>Quiz App - Categories</title>
     </Helmet>
+    <div className='main'>
     <div className='container'>
     <h1 className='text-purple-900'>Choose Your Catetory</h1>
      <div className="mt-6">
@@ -25,11 +26,12 @@ function Categories() {
         <Link className="boxes ml-auto bg-white text-purple-800 p-10 font-semibold rounded shadow mt-6" to='/quiz/music'>
           Music
         </Link>
-        
+        </div>
         </div>
         </div>
         </Fragment>
-        </div>
+        
+        </>
     )
 }
 

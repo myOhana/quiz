@@ -54,19 +54,23 @@ class QuizSummary extends Component {
           <div className="container stats">
             <h4>{remark}</h4>
             <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
+            <div className='row'>
             <span className="stat left">Total number of questions: </span>
             <span className="right">10</span>
-            <br />
+            </div>
+            <div className='row'>
             <span className="stat left">Number of attempted questions: </span>
             <span className="right">
               {this.state.numberOfAnsweredQuestions}
             </span>
-            <br />
+            </div>
+            <div className='row'>
             <span className="stat left">Number of Correct Answers: </span>
-            <span className="right">{this.state.correctAnswers}</span> <br />
+            <span className="right">{this.state.correctAnswers}</span> </div>
+            <div className='row'>
             <span className="stat left">Number of Wrong Answers: </span>
             <span className="right">{this.state.wrongAnswers}</span>
-            <br/>
+            </div>
           </div>
           <section>
             <ul>
