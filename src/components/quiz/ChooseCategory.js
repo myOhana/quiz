@@ -13,7 +13,7 @@ function Categories() {
     <div className='main'>
     <div className='container'>
     <h1 className='text-purple-900'>Choose Your Catetory</h1>
-     <div className="mt-6">
+     <div className="space">
         <Link className="boxes ml-auto bg-white text-purple-800 p-10 font-semibold rounded shadow mt-6" to='/quiz/gk'> 
           General Knowledge
         </Link>
